@@ -25,7 +25,7 @@
 	  <script src="js/modernizr.custom.js"></script>
  <script>
 	 window.onload = function() {
-  redirectHome();
+  checkLoginState();
 	 }
 
 	  </script>
@@ -64,14 +64,11 @@
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
    statusChangeCallback(response);
-  if (response.status === 'connected') {
-  alert(response.authResponse.userID);
-  window.top.location = "https://csinye.github.io/";
-  }
+  
   });
 }
-function redirectHome(){
-	alert("ethe");
+function statusChangeCallBack(response){
+	alert(response);
 if (response.status === 'connected') {
   alert(response.authResponse.userID);
   window.top.location = "https://csinye.github.io/";
