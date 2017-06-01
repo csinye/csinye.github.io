@@ -26,6 +26,7 @@
 	  <script>FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
 	if (response.status === 'connected') {
+	console.log(response.authResponse.userID);
   window.top.location = "index.html";
   }
 });</script>
@@ -65,6 +66,7 @@ function checkLoginState() {
   FB.getLoginStatus(function(response) {
    statusChangeCallback(response);
   if (response.status === 'connected') {
+  console.log(response.authResponse.userID);
   window.top.location = "index.html";
   }
   });
