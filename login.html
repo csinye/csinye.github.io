@@ -37,13 +37,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <script>
-	FB.getLoginStatus(function(response) {
-   statusChangeCallback(response);
-  if (response.status === 'connected') {
-  alert(response.authResponse.userID);
-  window.top.location = "https://csinye.github.io/";
-  }
-  });
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1361344087274512',
@@ -55,6 +48,7 @@
   };
 
   (function(d, s, id){
+	  alert(response.status);
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
