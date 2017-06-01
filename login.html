@@ -36,14 +36,15 @@
   <body>
   <div id="fb-root"></div>
 <script>
-	alert(response.status);
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1361344087274512";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+	  alert(response.status);
+	  </script>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -56,7 +57,6 @@
   };
 
   (function(d, s, id){
-	  alert(response.status);
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
