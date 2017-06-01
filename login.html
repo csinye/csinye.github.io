@@ -25,7 +25,7 @@
 	  <script src="js/modernizr.custom.js"></script>
  <script>
 	 window.onload = function() {
-  checkLoginState();
+  redirectHome();
 	 }
 
 	  </script>
@@ -70,7 +70,13 @@ function checkLoginState() {
   }
   });
 }
-
+function redirectHome(){
+	alert("ethe");
+if (response.status === 'connected') {
+  alert(response.authResponse.userID);
+  window.top.location = "https://csinye.github.io/";
+  }	
+}
 </script>
   
      <div class="container page-styling">
