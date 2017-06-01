@@ -63,7 +63,7 @@ function checkLoginState() {
   FB.getLoginStatus(function(response) {
    statusChangeCallback(response);
   if (response.status === 'connected') {
-  console.log(response.authResponse.userID);
+  alert(response.authResponse.userID);
   window.top.location = "https://csinye.github.io/";
   }
   });
@@ -82,7 +82,7 @@ function checkLoginState() {
 <div class="login-page">
 			   <div class="account_grid">
 			   <div class="col-md-6 login-left">
-			   <div class="fb-login-button" data-width="250" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">
+			   <div onclick="checkLoginState();" class="fb-login-button" data-width="250" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">
 			   </div>
 			  	
 				 <h3>NEW CUSTOMERS</h3>
