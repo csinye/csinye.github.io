@@ -43,7 +43,6 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1361344087274512";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-	  alert(response.status);
 	  </script>
 <script>
   window.fbAsyncInit = function() {
@@ -63,6 +62,7 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+	 alert(response.status);
    
 if (response.status === 'connected') {
   console.log(response.authResponse.userID);
