@@ -58,7 +58,6 @@
 
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
-  alert("call");
    statusChangeCallback(response);
   if (response.status === 'connected') {
   console.log(response.authResponse.userID);
@@ -66,6 +65,13 @@ function checkLoginState() {
   }
   });
 }();
+FB.login(function(response) {
+alert("fb.login");
+     if (response.authResponse) {
+        window.top.location = "http://www.foo.com";
+        });
+
+        }
 </script>
   
      <div class="container page-styling">
