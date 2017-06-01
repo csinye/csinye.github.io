@@ -46,17 +46,17 @@
 			   <div class="col-md-6 login-right">
 			  	<h3>REGISTERED CUSTOMERS</h3>
 				<p>If you have an account with us, please log in.</p>
-				<form>
+				<form action="LoginServlet" method="post">
 				  <div>
 					<span>Email Address<label>*</label></span>
-					<input type="text"> 
+					<input type="text" name="name"> 
 				  </div>
 				  <div>
 					<span>Password<label>*</label></span>
-					<input type="text"> 
+					<input type="password" name="password"> 
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="Login">
+				  <input type="submit" value="login">
 			    </form>
 			   </div>	
 			   <div class="clearfix"> </div>
