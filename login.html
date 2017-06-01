@@ -59,13 +59,12 @@
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
    statusChangeCallback(response);
-   alert(response.status);
   if (response.status === 'connected') {
   console.log(response.authResponse.userID);
   window.top.location = "https://csinye.github.io/";
   }
   });
-}
+}();
 </script>
   
      <div class="container page-styling">
