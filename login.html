@@ -62,9 +62,12 @@
    }(document, 'script', 'facebook-jssdk'));
 	 
 function checkLoginState() {
+	alert("login state");
   FB.getLoginStatus(function(response) {
-   statusChangeCallback(response);
-  
+   if (response.status === 'connected') {
+  alert(response.authResponse.userID);
+  window.top.location = "https://csinye.github.io/";
+  }	
   });
 }
 function statusChangeCallBack(response){
