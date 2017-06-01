@@ -62,11 +62,6 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 	 
-   
-if (response.status === 'connected') {
-  console.log(response.authResponse.userID);
-  window.top.location = "https://csinye.github.io/";
-  }
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
    statusChangeCallback(response);
