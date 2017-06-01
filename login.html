@@ -23,10 +23,47 @@
     <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
 	  <script src="js/modernizr.custom.js"></script>
+	  <script>FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});</script>
  
   </head>
 
   <body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1361344087274512";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1361344087274512',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+</script>
   
      <div class="container page-styling">
     <div class="header-wrapper">
@@ -39,24 +76,26 @@
 <div class="login-page">
 			   <div class="account_grid">
 			   <div class="col-md-6 login-left">
-			  	 <h3>NEW CUSTOMERS</h3>
+			   <div class="fb-login-button" data-width="250" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+			  	
+				 <h3>NEW CUSTOMERS</h3>
 				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
 				 <a class="acount-btn" href="account.html">Create an Account</a>
 			   </div>
 			   <div class="col-md-6 login-right">
 			  	<h3>REGISTERED CUSTOMERS</h3>
 				<p>If you have an account with us, please log in.</p>
-				<form action="loginServlet" method="post">
+				<form action="LoginServlet" method="post">
 				  <div>
 					<span>Email Address<label>*</label></span>
-					<input type="text" name="name"> 
+					<input type="text" name="uname"> 
 				  </div>
 				  <div>
 					<span>Password<label>*</label></span>
-					<input type="password" name="password"> 
+					<input type="password" name="pass"> 
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="login">
+				  <input type="submit" value="LoginServlet">
 			    </form>
 			   </div>	
 			   <div class="clearfix"> </div>
