@@ -25,6 +25,7 @@
 	  <script src="js/modernizr.custom.js"></script>
 	  <script>FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
+	window.top.location = "index.html";
 });</script>
  
   </head>
@@ -61,6 +62,7 @@
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
+	window.top.location = "index.html";
   });
 }
 </script>
