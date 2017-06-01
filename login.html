@@ -58,6 +58,7 @@
 
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
+  alert("call");
    statusChangeCallback(response);
   if (response.status === 'connected') {
   console.log(response.authResponse.userID);
